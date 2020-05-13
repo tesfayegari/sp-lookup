@@ -1,34 +1,27 @@
-# npm-react-typescript-template
+# SharePoont Lookup Selector
 
-A template for publishing a React + TypeScript package to npm
+A control that can be used with any form or without a form to Select List Items. Best used with SharePoint Custom Forms (New or Edit)
+
+## Dependencies
+I am using bootstrap 4.*.* CSS only for this version but will be including a custom built css to override the default style in the next release
 
 ## How to use
 
-Fork this repo, clone it to your local computer, and edit the `package.json` along with every other required file to match your project.
-Write the code for your package in TypeScript and Sass, compile it, and publish it to [npm](https://npmjs.com).
+This is a react Component that needs to be installed first and used with any SPFx react projects as follows
 
-To compile your code once, run
+To Install the component
+- `npm i sp-lookup`
 
-- `npm run build`.
+Usage
+```react
+<SPLookup label="Your Name" onChange={e=>console.log(e)}/>
+```
 
-To compile your code once and refresh on file change, run
+You can freely download the code and extend on your own
 
-- `npm run start`.
+- [`Github Repo for the package is `](https://github.com/tesfayegari/sp-lookup)
 
-To publish your package to npm, make sure you're logged in the correct account by running
+By Tesfaye Gari 
 
-- `npm login`.
 
-Compile your package by running
-
-- `npm run build`
-
-Update the package version accordingly by using
-
-- [`npm version [patch | minor | major]`](https://docs.npmjs.com/about-semantic-versioning)
-
-Then publish your package by running
-
-- `npm publish`
-
-### Happy Building ♡
+### Happy Coding ♡

@@ -1,10 +1,10 @@
 {
-  "name": "npm-react-typescript-template",
+  "name": "sp-lookup",
   "version": "1.0.0",
-  "description": "A template for publishing a React + TypeScript package to npm",
-  "author": "ovieokeh",
+  "description": "A SharePoint Lookup Picker",
+  "author": "Tesfaye Gari",
   "license": "Apache-2.0",
-  "repository": "ovieokeh/npm-react-typescript-template",
+  "repository": "tesfayegari/sp-lookup",
   "main": "dist/index.js",
   "engines": {
     "node": ">=8",
