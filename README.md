@@ -50,6 +50,11 @@ enum FormType {
 }
 ```
 
+Screen Shots 
+![alt text][Snipet for Display Form]
+
+[Display Form]: /assets/1.png "Display Form Snipet"
+
 You can freely download the code and extend on your own
 
 - [`Github Repo for the package is `](https://github.com/tesfayegari/sp-lookup)
