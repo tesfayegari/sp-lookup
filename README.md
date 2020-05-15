@@ -36,6 +36,13 @@ interface ISPLookupProps {
   context: WebPartContext;
   formType?: FormType;
 }
+
+//Form Types are as follows 
+enum FormType {
+  NewForm = 1,
+  EditForm,
+  DisplayForm
+}
 ```
 
 You can freely download the code and extend on your own
@@ -44,3 +51,4 @@ You can freely download the code and extend on your own
 - [`Email: Tesfaye Gari `](mailto:tesfaye.gari@gmail.com)
 
 ### Happy Coding ♡
+### By Tesfaye Gari, Sharing is Caring ♡
