@@ -11,7 +11,7 @@ export interface MultiLookupPickerProps {
   onChange?: (selected: string[]) => void;
   listName: string;
   formType?: FormType;
-  defaultValue?: Option[];
+  defaultValue?: Option[] | any;
   multi: boolean;
 }
 export interface MultiLookupPickerState {

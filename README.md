@@ -14,29 +14,32 @@ To Install the component
 
 Usage
 ```react
-import SPLookup from "sp-lookup";
+import SPLookup, { FormType } from 'sp-lookup';
 
 ..............
 
 <SPLookup 
-    lookupListName="AccordionList" 
-    parentListName="Sandwiches" 
+    itemId={2} //item ID is necessary when Form Type is not New Form
+    lookupListName="AccordionList" //Lookup List Name, For this feature column is Title internal name
+    parentListName="Sandwiches" //Parent List Name
+    internalLookupName="MultiLookup" //Internal name of lookup column in Parent List
     onChange={value => console.log(value)} 
     context={this.props.context} 
-    multi={true}/>
+    multi={true}
+    formType={FormType.EditForm}/>
 ```
 The Complete Props are 
 ```
 interface ISPLookupProps {
-  lookupListName: string; //Name of the list which is used as a lookup
-  parentListName: string; //List where the lookup is used 
-  internalLookupName?: string; //default Title
-  itemId?: number; //with Display Form and Edit Form
+  lookupListName: string;
+  parentListName: string;
+  internalLookupName?: string; 
+  itemId?: number;
   onChange: (value: any[]) => void;
   styles?: any;
   context: WebPartContext;
-  formType?: FormType; //default New Form
-  multi?: boolean; //default false
+  formType?: FormType;
+  multi?: boolean;
 }
 
 //Form Types are as follows 
