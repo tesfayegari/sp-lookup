@@ -22,7 +22,8 @@ import SPLookup from "sp-lookup";
     lookupListName="AccordionList" 
     parentListName="Sandwiches" 
     onChange={value => console.log(value)} 
-    context={this.props.context} />
+    context={this.props.context} 
+    multi={true}/>
 ```
 The Complete Props are 
 ```
@@ -34,7 +35,8 @@ interface ISPLookupProps {
   onChange: (value: any[]) => void;
   styles?: any;
   context: WebPartContext;
-  formType?: FormType;
+  formType?: FormType; //default New Form
+  multi?: boolean; //default false
 }
 
 //Form Types are as follows 

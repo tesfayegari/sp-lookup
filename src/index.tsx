@@ -18,6 +18,7 @@ export interface ISPLookupProps {
   styles?: any;
   context: WebPartContext;
   formType?: FormType;
+  multi?: boolean;
 }
 
 interface ISPLookupState {
@@ -69,13 +70,15 @@ class SPLookup extends React.Component<ISPLookupProps, ISPLookupState> {
 
   render() {
     const formType = this.props.formType ? this.props.formType : FormType.NewForm;
+    const multi = this.props.multi == undefined ? false : this.props.multi;
     return (
       <>
         <label htmlFor="multiLookup">Choose Lookup</label>
         <MultiLookupPicker 
           formType={formType} 
           onChange={this.onChangeLookup} 
-          listName={this.props.lookupListName} />
+          listName={this.props.lookupListName} 
+          multi={multi}/>
       </>
     )
   }

@@ -1,6 +1,6 @@
 {
   "name": "sp-lookup",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A SharePoint Lookup Picker",
   "author": "Tesfaye Gari",
   "license": "Apache-2.0",
@@ -47,8 +47,8 @@
     "dist"
   ],
   "keywords": [
-    "react",
-    "typescript",
-    "npm"
+    "SharePoint",
+    "SPLookup",
+    "SP-Lookup"
   ]
 }

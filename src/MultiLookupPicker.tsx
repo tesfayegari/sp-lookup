@@ -12,6 +12,7 @@ export interface MultiLookupPickerProps {
   listName: string;
   formType?: FormType;
   defaultValue?: Option[];
+  multi: boolean;
 }
 export interface MultiLookupPickerState {
   selected: string[];
@@ -63,14 +64,13 @@ export default class MultiLookupPicker extends React.Component<MultiLookupPicker
   }
 
   render() {
-    const defValue = this.state.options.filter(item => parseInt(item.value) % 2 == 0);
     const formType = this.props.formType || FormType.NewForm;
     return (
     
       <Select
         options={this.state.options}
-        value={this.props.defaultValue? this.props.defaultValue : defValue}
-        isMulti
+        value={this.props.defaultValue}
+        isMulti={this.props.multi}
         isClearable={true}
         isSearchable={true}
         onChange={this.handleChange}
