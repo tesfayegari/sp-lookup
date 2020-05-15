@@ -53,6 +53,10 @@ enum FormType {
 Screen Shots 
 - Display Form
 ![Display Form Snipet](/assets/1.png)
+![Display Form Screen](/assets/2.png)
+- Edit Form 
+![Edit Form Snipet](/assets/3.png)
+![Edit Form Screen](/assets/4.png)
 
 You can freely download the code and extend on your own
 
