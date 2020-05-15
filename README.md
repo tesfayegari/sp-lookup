@@ -3,7 +3,7 @@
 A control that can be used with any form or without a form to Select List Items. Best used with SharePoint Custom Forms (New or Edit)
 
 ## Dependencies
-I am using bootstrap 4.*.* CSS only for this version but will be including a custom built css to override the default style in the next release
+sp-pnp-js, react-select, react, react-dom, @microsoft/sp-webpart-base, @microsoft/sp-http
 
 ## How to use
 
