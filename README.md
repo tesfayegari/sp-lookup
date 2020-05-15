@@ -14,14 +14,16 @@ To Install the component
 
 Usage
 ```react
+import SPLookup from "sp-lookup";
+
+..............
+
 <SPLookup label="Your Name" onChange={e=>console.log(e)}/>
 ```
 
 You can freely download the code and extend on your own
 
 - [`Github Repo for the package is `](https://github.com/tesfayegari/sp-lookup)
-
-By Tesfaye Gari 
-
+- [`Email: Tesfaye Gari `](mailto:tesfaye.gari@gmail.com)
 
 ### Happy Coding ♡

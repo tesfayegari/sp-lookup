@@ -1,6 +1,6 @@
 {
   "name": "sp-lookup",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A SharePoint Lookup Picker",
   "author": "Tesfaye Gari",
   "license": "Apache-2.0",
@@ -14,10 +14,21 @@
     "build": "rollup -c",
     "start": "rollup -c -w"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@microsoft/sp-http": "^1.10.0",
+    "@microsoft/sp-webpart-base": "^1.10.0",
+    "@pnp/graph": "^2.0.5",
+    "@pnp/sp": "^2.0.5",
+    "@types/react-select": "^3.0.13",
+    "react-dual-listbox": "^2.0.0",
+    "react-select": "^3.1.0",
+    "sp-pnp-js": "^3.0.10"
+  },
   "peerDependencies": {
     "react": ">= 16.8.0 < 2",
-    "react-dom": ">= 16.8.0 < 2"
+    "react-dom": ">= 16.8.0 < 2",
+    "react-select": "^3.1.0",
+    "sp-pnp-js": "^3.0.10"
   },
   "devDependencies": {
     "@types/react": "^16.3.13",
