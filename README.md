@@ -1,4 +1,4 @@
-# SharePoont Lookup Selector
+# SharePoint Lookup Selector
 
 A control that can be used with any form or without a form to Select List Items. Best used with SharePoint Custom Forms (New or Edit)
 
