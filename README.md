@@ -51,9 +51,8 @@ enum FormType {
 ```
 
 Screen Shots 
-![alt text][Snipet for Display Form]
-
-[Display Form]: /assets/1.png "Display Form Snipet"
+- Display Form
+![Display Form Snipet](/assets/1.png)
 
 You can freely download the code and extend on your own
 
