@@ -64,7 +64,7 @@ export default class MultiLookupPicker extends React.Component<MultiLookupPicker
 
   render() {
     const defValue = this.state.options.filter(item => parseInt(item.value) % 2 == 0);
-
+    const formType = this.props.formType || FormType.NewForm;
     return (
     
       <Select
@@ -77,7 +77,8 @@ export default class MultiLookupPicker extends React.Component<MultiLookupPicker
         onInputChange={this.handleInputChange}
         name="colors"
         className="basic-multi-select w-100"
-        classNamePrefix="select" 
+        classNamePrefix="select"
+        isDisabled={formType == FormType.DisplayForm ? true :false}
         />
 
     );

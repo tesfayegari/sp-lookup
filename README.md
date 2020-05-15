@@ -18,7 +18,24 @@ import SPLookup from "sp-lookup";
 
 ..............
 
-<SPLookup label="Your Name" onChange={e=>console.log(e)}/>
+<SPLookup 
+    lookupListName="AccordionList" 
+    parentListName="Sandwiches" 
+    onChange={value => console.log(value)} 
+    context={this.props.context} />
+```
+The Complete Props are 
+```
+interface ISPLookupProps {
+  lookupListName: string; //Name of the list which is used as a lookup
+  parentListName: string; //List where the lookup is used 
+  internalLookupName?: string; //default Title
+  itemId?: number; //with Display Form and Edit Form
+  onChange: (value: any[]) => void;
+  styles?: any;
+  context: WebPartContext;
+  formType?: FormType;
+}
 ```
 
 You can freely download the code and extend on your own
