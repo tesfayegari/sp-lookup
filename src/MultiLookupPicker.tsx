@@ -44,6 +44,12 @@ export default class MultiLookupPicker extends React.Component<MultiLookupPicker
     console.group('Input Changed');
     console.log(inputValue);
     console.log(`action: ${actionMeta.action}`);
+
+    if(actionMeta.action == 'input-change' && inputValue.length >=3 ){
+      console.log('Fetch data and repopulate the value', inputValue);
+      //TODO: Implement a fetch based on search 
+      //Fetch data and update state options, new data +  selected 
+    }
     console.groupEnd();
   };
 
@@ -75,7 +81,7 @@ export default class MultiLookupPicker extends React.Component<MultiLookupPicker
         isSearchable={true}
         onChange={this.handleChange}
         onInputChange={this.handleInputChange}
-        name="colors"
+        name="LookupList"
         className="basic-multi-select w-100"
         classNamePrefix="select"
         isDisabled={formType == FormType.DisplayForm ? true :false}

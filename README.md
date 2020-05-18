@@ -31,15 +31,17 @@ import SPLookup, { FormType } from 'sp-lookup';
 The Complete Props are 
 ```
 interface ISPLookupProps {
-  lookupListName: string;
-  parentListName: string;
-  internalLookupName?: string; 
-  itemId?: number;
-  onChange: (value: any[]) => void;
-  styles?: any;
-  context: WebPartContext;
-  formType?: FormType;
-  multi?: boolean;
+  lookupListName: string; //List name of the lookup
+  parentListName: string; //List name of the list which uses Lookup field
+  internalLookupName?: string; //field internal name used for lookup column
+  itemId?: number; //if edit or display form item id to be edited or displayed
+  onChange: (value: any[]) => void; //selected value will be returned here
+  styles?: any; // custom css to be used
+  context: WebPartContext; // Webpart context needs to be passed 
+  formType?: FormType; //Display Edit and New form types 
+  multi?: boolean; // single or multi item selector 
+  label?: string; // Label used for the field 
+  async?: boolean; // This new feature allows for a large list, search for item to select 
 }
 
 //Form Types are as follows 
@@ -58,7 +60,13 @@ Screen Shots
 ![Edit Form Snipet](/assets/3.png)
 ![Edit Form Screen](/assets/4.png)
 
+- Edit form with async true and custom label for the field on the form 
+
 You can freely download the code and extend on your own
+![Edit Form Snipet](/assets/6.png)
+![Edit Form Screen](/assets/7.png)
+![Edit Form Screen](/assets/8.png)
+![Edit Form Screen](/assets/9.png)
 
 - [`Github Repo for the package is `](https://github.com/tesfayegari/sp-lookup)
 - [`Email: Tesfaye Gari `](mailto:tesfaye.gari@gmail.com)

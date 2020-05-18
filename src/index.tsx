@@ -2,6 +2,7 @@ import * as React from 'react'
 import { WebPartContext } from "@microsoft/sp-webpart-base";
 import { SPHttpClient } from "@microsoft/sp-http";
 import MultiLookupPicker from "./MultiLookupPicker";
+import AsyncSPLookup from "./AsyncSelector";
 
 export enum FormType {
   NewForm = 1,
@@ -12,7 +13,7 @@ export enum FormType {
 export interface ISPLookupProps {
   lookupListName: string;
   parentListName: string;
-  internalLookupName?: string; 
+  internalLookupName?: string;
   itemId?: number;
   onChange: (value: any[]) => void;
   styles?: any;
@@ -20,6 +21,7 @@ export interface ISPLookupProps {
   formType?: FormType;
   multi?: boolean;
   label?: string;
+  async?: boolean;
 }
 
 interface ISPLookupState {
@@ -48,23 +50,23 @@ class SPLookup extends React.Component<ISPLookupProps, ISPLookupState> {
     this.props.onChange(selected);
   }
 
-  private _getListItemById(listName: string, itemId: number){
+  private _getListItemById(listName: string, itemId: number) {
     const lookup = this.props.internalLookupName || 'Title';
-    const webAbsoluteUrl =  this.props.context.pageContext.web.absoluteUrl;
+    const webAbsoluteUrl = this.props.context.pageContext.web.absoluteUrl;
     const apiUrl = `${webAbsoluteUrl}/_api/web/lists/getbytitle('${listName}')/items(${itemId})?$select=Id,${this.props.internalLookupName}/Id,${this.props.internalLookupName}/Title&$expand=${this.props.internalLookupName}`;
     this.props.context.spHttpClient.get(apiUrl, SPHttpClient.configurations.v1)
       .then(response => response.json())
       .then(data => {
         console.log('Item Passed is', data);
-        if(this.props.multi){
-        let def: any[] = [];
-        data[lookup].forEach(item => def.push({label: item.Title, value: item.Id}));
-        console.log('Default value is ', def);
-        this.setState({selected: def});
-        }else{
-          this.setState({selected: {label: data.Title, value: data.Id}});
+        if (this.props.multi) {
+          let def: any[] = [];
+          data[lookup].forEach(item => def.push({ label: item.Title, value: item.Id }));
+          console.log('Default value is ', def);
+          this.setState({ selected: def });
+        } else {
+          this.setState({ selected: { label: data.Title, value: data.Id } });
         }
-      }, error => console.error('Oops error',error));
+      }, error => console.error('Oops error', error));
   }
 
   //private async getListItems(filterText: string, listTitle: string, internalColumnName: string, keyInternalColumnName?: string, webUrl?: string, filter?: string ): Promise<any[]> {
@@ -96,15 +98,23 @@ class SPLookup extends React.Component<ISPLookupProps, ISPLookupState> {
     return (
       <>
         <label htmlFor="multiLookup">{this.props.label || 'Choose Lookup'}</label>
-        <MultiLookupPicker 
-          formType={formType} 
-          onChange={this.onChangeLookup} 
-          listName={this.props.lookupListName} 
+        {this.props.async ? <AsyncSPLookup
+          formType={formType}
+          onChange={this.onChangeLookup}
+          listName={this.props.lookupListName}
           multi={multi}
-          defaultValue={this.state.selected}/>
+          defaultValue={this.state.selected} /> :
+          <MultiLookupPicker
+            formType={formType}
+            onChange={this.onChangeLookup}
+            listName={this.props.lookupListName}
+            multi={multi}
+            defaultValue={this.state.selected} />
+        }
       </>
     )
   }
 }
 
 export default SPLookup;
+
