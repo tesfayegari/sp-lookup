@@ -61,10 +61,10 @@ class SPLookup extends React.Component<ISPLookupProps, ISPLookupState> {
         if (this.props.multi) {
           let def: any[] = [];
           data[lookup].forEach(item => def.push({ label: item.Title, value: item.Id }));
-          console.log('Default value is ', def);
+          //console.log('Default value is ', def);
           this.setState({ selected: def });
         } else {
-          this.setState({ selected: { label: data.Title, value: data.Id } });
+          this.setState({ selected: { label: data[lookup].Title, value: data[lookup].Id } });
         }
       }, error => console.error('Oops error', error));
   }
